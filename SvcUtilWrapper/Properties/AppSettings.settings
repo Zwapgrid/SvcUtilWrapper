@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SvcUtilWrapper.Properties" GeneratedClassName="AppSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SvcUtilsPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools\SvcUtil.exe</Value>
+    </Setting>
+    <Setting Name="OutputFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">../../src/Zwapgrid.Core/Integrations/NetSuite/Client/Generated.cs</Value>
+    </Setting>
+    <Setting Name="Namespace" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Zwapgrid.Integrations.NetSuite.Client.SuiteTalk</Value>
+    </Setting>
+    <Setting Name="ConfigFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">NetSuite.config</Value>
+    </Setting>
+    <Setting Name="WsdlPath" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.netsuite.com/wsdl/v2019_1_0/netsuite.wsdl</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
