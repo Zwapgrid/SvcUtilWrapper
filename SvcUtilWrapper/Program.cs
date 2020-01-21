@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using SvcUtilWrapper.Properties;
 
 namespace SvcUtilWrapper
@@ -34,6 +36,8 @@ namespace SvcUtilWrapper
 
                 var svcUtilAssembly = Assembly.LoadFile(svcUtilsPath);
                 svcUtilAssembly.EntryPoint.Invoke(null, new object[] { parameters });
+
+                RemoveFaultContractAttributes();
             }
             catch (Exception e)
             {
@@ -42,6 +46,13 @@ namespace SvcUtilWrapper
             }
 
             Console.WriteLine("Successfully generated client");
+        }
+
+        static void RemoveFaultContractAttributes()
+        {
+            var generated = File.ReadAllText(AppSettings.Default.OutputFilePath);
+            generated = new Regex(@".*\[System.ServiceModel.FaultContractAttribute.*\n").Replace(generated, string.Empty);
+            File.WriteAllText(AppSettings.Default.OutputFilePath, generated);
         }
     }
 }
